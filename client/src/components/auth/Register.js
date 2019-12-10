@@ -50,10 +50,10 @@ class Register extends Component {
     return (
       <div className="container">
         <div className="row" style={{ marginTop: "3rem" }}>
-          <div className="col s8 offset-s2 darken-4 white-text z-depth-5 Register">
+          <div className="col s8 offset-s2 darken-4 z-depth-5 Register">
             <Link
               to="/"
-              className="btn-flat waves-effect white-text"
+              className="btn-flat waves-effect"
               style={{ marginTop: "1rem" }}
             >
               <i className="material-icons left">keyboard_backspace</i> Back to
@@ -66,7 +66,7 @@ class Register extends Component {
             <form noValidate onSubmit={this.onSubmit}>
               <div className="input-field col s10">
                 <input
-                  style={{ margin: "0", paddingLeft: "1rem", color: "white" }}
+                  style={{ margin: "0", paddingLeft: "1rem" }}
                   onChange={this.onChange}
                   value={this.state.name}
                   error={errors.name}
@@ -81,7 +81,7 @@ class Register extends Component {
               </div>
               <div className="input-field col s10">
                 <input
-                  style={{ margin: "0", paddingLeft: "1rem", color: "white" }}
+                  style={{ margin: "0", paddingLeft: "1rem" }}
                   onChange={this.onChange}
                   value={this.state.email}
                   error={errors.email}
@@ -96,7 +96,7 @@ class Register extends Component {
               </div>
               <div className="input-field col s10">
                 <input
-                  style={{ margin: "0", paddingLeft: "1rem", color: "white" }}
+                  style={{ margin: "0", paddingLeft: "1rem" }}
                   onChange={this.onChange}
                   value={this.state.password}
                   error={errors.password}
@@ -111,7 +111,7 @@ class Register extends Component {
               </div>
               <div className="input-field col s10">
                 <input
-                  style={{ margin: "0", paddingLeft: "1rem", color: "white" }}
+                  style={{ margin: "0", paddingLeft: "1rem" }}
                   onChange={this.onChange}
                   value={this.state.password2}
                   error={errors.password2}
@@ -139,7 +139,7 @@ class Register extends Component {
                   Sign up
                 </button>
                 <p
-                  className="white-text"
+                  className=""
                   style={{
                     marginBottom: "2rem",
                     marginTop: "1rem",

@@ -10,12 +10,11 @@ class Dashboard extends Component {
   };
 
   render() {
-    const { user } = this.props.auth;
     return (
       <div className="container">
         <div className="row" style={{ marginTop: "3rem" }}>
           <div
-            className="col s8 darken-4 white-text z-depth-5 Dashboard"
+            className="col s8 darken-4 z-depth-5 Dashboard"
             style={{ height: "80vh" }}
           >
             <div className="row" style={{ marginTop: "1rem" }}>

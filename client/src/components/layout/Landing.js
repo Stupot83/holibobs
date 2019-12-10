@@ -5,7 +5,7 @@ class Landing extends Component {
     return (
       <div style={{ height: "100vh" }} className="container">
         <div className="row" style={{ marginTop: "4rem" }}>
-          <div className="col s12 center-align darken-4 white-text z-depth-5 Landing">
+          <div className="col s12 center-align darken-4 z-depth-5 Landing">
             <div className="row">
               <a
                 href="/register"

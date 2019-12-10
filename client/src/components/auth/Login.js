@@ -50,10 +50,10 @@ class Login extends Component {
     return (
       <div className="container">
         <div style={{ marginTop: "4rem" }} className="row">
-          <div className="col s8 offset-s2 darken-4 white-text z-depth-5 Login">
+          <div className="col s8 offset-s2 darken-4 z-depth-5 Login">
             <Link
               to="/"
-              className="btn-flat waves-effect white-text"
+              className="btn-flat waves-effect"
               style={{ marginTop: "1rem" }}
             >
               <i className="material-icons left">keyboard_backspace</i> Back to
@@ -121,7 +121,7 @@ class Login extends Component {
                   Login
                 </button>
                 <p
-                  className="white-text"
+                  className=""
                   style={{
                     marginBottom: "2rem",
                     marginTop: "1rem",
