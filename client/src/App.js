@@ -1,12 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import Navbar from "./components/layout/Navbar";
+import Landing from "./components/layout/Landing";
+import Register from "./components/auth/Register";
+import Login from "./components/auth/Login";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { Component } from "react";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import './App.css';
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <h1>Holibobs</h1>
+     <Navbar />
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
     </div>
+    </Router>
   );
 }
 
