@@ -4,21 +4,17 @@ import { Link } from "react-router-dom";
 class Navbar extends Component {
   render() {
     return (
-        <nav className="navbar navbar-expand-sm bg-light">
-          <div className="navbar-nav">
-            <Link
-              to="/"
-              className="col-md-6"
-              >
+      <div className="navbar-fixed">
+        <nav className="z-depth-0">
+          <div className="nav-wrapper grey">
+            <Link to="/" className="col s5 brand-logo center grey white-text">
               HOLIBOBS
             </Link>
           </div>
         </nav>
+      </div>
     );
   }
 }
 
 export default Navbar;
-
-
-
