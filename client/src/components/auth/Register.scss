@@ -1,0 +1,150 @@
+.Register {
+    background-color: transparent;
+
+    .input-text {
+        padding: 0 20px;
+        border: none;
+        border-bottom: 3px solid #022444;
+        margin-top: 7px;
+        margin-bottom: 7px;
+        background: transparent;
+        font-size: 0.8rem;
+    }
+
+    .input-submit {
+        border: 2px solid #022444;
+        background-color: #022444;
+        padding: 5px 30px;
+        border-radius: 15px; 
+        color: #fff;
+        margin-top: 20px;
+        line-height: 1.2rem;
+    }
+
+    .input-submit:hover {
+        background-color: transparent;
+        color: #022444;
+        cursor: pointer;
+    }
+
+    .register-button {
+        text-align: center;
+    }
+
+    label,input {
+        display: block;
+        margin-left: 55px;
+    }
+
+    input {
+        line-height: 2rem;
+        width: 200px;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .button-link {
+        margin-top: 30px;
+        color: #022444;
+        border: none;
+        background-color: transparent;
+    }
+    ​
+    .button-link:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
+.card-center2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgba(255,255,255, 0.70);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    width: 700px;
+    height: 400px; 
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.card-slider2 {
+    margin-left: 350px;
+    font-weight: 300;
+    background: #ffb142;
+    color: #fff;    
+    height: 100%;
+    width: 350px;
+    position: absolute;
+    left: 0;
+    transition: 0.75s;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    .card-slider-heading2 {
+        font-size: 28px;
+        padding: 5px 20px;
+        text-shadow: 2px 2px 5px #545454;
+    }
+
+    .card-slider-text2 {
+        padding: 0 20px
+    }
+}
+
+.card-slider-icon2 {
+    margin: 20px auto; 
+    height: 90px;
+    width: 120px;
+    animation: swing ease-in-out 1s infinite alternate;
+    transform-origin: center -20px;
+    display: block;
+}
+
+.form-register {
+    font-weight: 300;
+    background: white;
+    color: #022444;    
+    height: 100%;
+    width: 350px;
+    left: 0;
+    transition: 0.75s;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.plane {
+    height: 50px;
+    width: 95px;
+    animation: fly 5s ease-in-out;
+    margin-left: 1100px;
+  }
+
+  @keyframes swing {
+    0% { transform: rotate(3deg); }
+    100% { transform: rotate(-3deg); }
+}
+
+@keyframes fly {
+    0% {
+        margin-left: -100px;
+    }
+​
+    100% {
+        margin-left: 1100px;
+    }
+}
