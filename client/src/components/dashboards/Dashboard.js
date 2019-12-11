@@ -2,11 +2,36 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import axios from "axios";
 
 class Dashboard extends Component {
+  constructor() {
+    super();
+    this.state = {
+      location: "",
+      startDate: "",
+      endDate: ""
+    };
+  }
   onLogoutClick = e => {
     e.preventDefault();
     this.props.logoutUser();
+  };
+
+  onChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+  onFormSubmit = event => {
+    event.preventDefault();
+    const { location, startDate, endDate } = this.state;
+    axios
+      .post("/holidays", { location, startDate, endDate })
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   };
 
   render() {
@@ -33,7 +58,17 @@ class Dashboard extends Component {
                 Logout
               </button>
             </div>
-            <div className="row" style={{ marginTop: "3rem" }}></div>
+            <div className="row" style={{ marginTop: "3rem" }}>
+              <form onSubmit={this.onFormSubmit}>
+                <label>Location</label>
+                <input type="text" name="location" onChange={this.onChange} />
+                <label>Start date</label>
+                <input type="date" name="startDate" onChange={this.onChange} />
+                <label>End date</label>
+                <input type="date" name="endDate" onChange={this.onChange} />
+                <input type="submit" value="submit" />
+              </form>
+            </div>
           </div>
         </div>
       </div>

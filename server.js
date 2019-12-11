@@ -48,5 +48,8 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 app.use("/api/users", users);
+app.post("/holidays", (req, res) => {
+console.log(req)
+});
 
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
