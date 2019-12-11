@@ -15,7 +15,7 @@ const holidaySchema = new Schema({
     location: {
         type: String,
         required: true
-    }
+    },
 });
 
 const Holiday = mongoose.model("holidays", holidaySchema);
