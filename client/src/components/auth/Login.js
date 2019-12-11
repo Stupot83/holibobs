@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
+import "./Login.scss";
 
 class Login extends Component {
   constructor() {
@@ -48,90 +49,68 @@ class Login extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="container">
-        <div style={{ marginTop: "4rem" }} className="row">
-          <div className="col s8 offset-s2 darken-4 z-depth-5 Login">
-            <Link
-              to="/"
-              className="btn-flat waves-effect"
-              style={{ marginTop: "1rem" }}
-            >
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
-            </Link>
-            <form noValidate onSubmit={this.onSubmit}>
-              <div
-                className="input-field col s10"
-                style={{ marginTop: "2rem" }}
-              >
-                <input
-                  style={{ marginTop: "2rem", paddingLeft: "1rem" }}
-                  onChange={this.onChange}
-                  value={this.state.email}
-                  error={errors.email}
-                  id="email"
-                  type="email"
-                  className={classnames("", {
-                    invalid: errors.email || errors.emailnotfound
-                  })}
-                />
-                <label htmlFor="email" style={{ fontSize: "2rem" }}>
-                  Email
-                </label>
-                <span className="red-text">
-                  {errors.email}
-                  {errors.emailnotfound}
-                </span>
-              </div>
-              <div
-                className="input-field col s10"
-                style={{ marginTop: "1rem" }}
-              >
-                <input
-                  style={{ marginTop: "2rem", paddingLeft: "1rem" }}
-                  onChange={this.onChange}
-                  value={this.state.password}
-                  error={errors.password}
-                  id="password"
-                  type="password"
-                  className={classnames("", {
-                    invalid: errors.password || errors.passwordincorrect
-                  })}
-                />
-                <label htmlFor="password" style={{ fontSize: "2rem" }}>
-                  Password
-                </label>
-                <span className="red-text">
-                  {errors.password}
-                  {errors.passwordincorrect}
-                </span>
-              </div>
-              <div className="col s10" style={{ paddingLeft: "11.250px" }}>
-                <button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem",
-                    marginBottom: "2rem"
-                  }}
-                  type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                >
-                  Login
-                </button>
-                <p
-                  className=""
-                  style={{
-                    marginBottom: "2rem",
-                    marginTop: "1rem",
-                    fontSize: "1.4rem"
-                  }}
-                >
-                  Don't have an account? <Link to="/register">Register</Link>
+      <div className="container Login">
+        <div className="row">
+          <div className="">
+            <Link to="/" className=""></Link>
+            <img src="./images/plane.png" alt="plane" className="plane"></img>
+            <div className="card-center">
+              <div className="card-slider">
+                <p className="card-slider-heading">Welcome To Holibobs</p>
+                <p className="card-slider-text">
+                  Log In To Access Your Account
                 </p>
+                <img
+                  src="./images/suitcase.png"
+                  alt="icon"
+                  className="card-slider-icon"
+                />
               </div>
-            </form>
+              <div className="form-login">
+                <form noValidate onSubmit={this.onSubmit}>
+                  <label htmlFor="email">Email</label>
+                  <input
+                    onChange={this.onChange}
+                    value={this.state.email}
+                    error={errors.email}
+                    id="email"
+                    type="email"
+                    className={classnames("input-text", {
+                      invalid: errors.email || errors.emailnotfound
+                    })}
+                  />
+                  <span className="red-text">
+                    {errors.email}
+                    {errors.emailnotfound}
+                  </span>
+                  <div className="">
+                    <label htmlFor="password">Password</label>
+                    <input
+                      onChange={this.onChange}
+                      value={this.state.password}
+                      error={errors.password}
+                      id="password"
+                      type="password"
+                      className={classnames("input-text", {
+                        invalid: errors.password || errors.passwordincorrect
+                      })}
+                    />
+                    <span className="red-text">
+                      {errors.password}
+                      {errors.passwordincorrect}
+                    </span>
+                  </div>
+                  <div className="login-button">
+                    <button type="submit" className="input-submit">
+                      Login
+                  </button>
+                    <p className="button-link">
+                      Don't have an account? <Link to="/register">Register</Link>
+                    </p>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
