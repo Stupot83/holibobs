@@ -68,6 +68,7 @@ class Login extends Component {
               </div>
               <div className="form-login">
                 <form noValidate onSubmit={this.onSubmit}>
+                <div className="">
                   <label htmlFor="email">Email</label>
                   <input
                     onChange={this.onChange}
@@ -83,6 +84,7 @@ class Login extends Component {
                     {errors.email}
                     {errors.emailnotfound}
                   </span>
+                  </div>
                   <div className="">
                     <label htmlFor="password">Password</label>
                     <input
