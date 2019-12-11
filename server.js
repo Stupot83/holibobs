@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const users = require("./routes/api/users");
+const holidays = require("./routes/api/holidays");
 const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 8000;
@@ -48,8 +49,6 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 app.use("/api/users", users);
-app.post("/holidays", (req, res) => {
-console.log(req)
-});
+app.use("/api/holidays", holidays);
 
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
