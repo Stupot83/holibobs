@@ -2,7 +2,7 @@ const express = require("express");
 const routes = express.Router();
 const Holiday = require("../../schema/Holiday");
 
-routes.post("/holiday", (req, res) => {
+routes.post("/", (req, res) => {
   const newHoliday = new Holiday({
     userId: req.cookies.userId,
     startDate: req.body.startDate,
@@ -14,6 +14,12 @@ routes.post("/holiday", (req, res) => {
     .save()
     .then(holiday => res.json(holiday))
     .catch(err => console.log(err));
+});
+
+routes.get("/", (req, res) => {
+  Holiday.find ({ userId: req.cookies.userId } )
+  .then ( (holidays) => res.json(holidays))
+  .catch(err => console.log(err));
 });
 
 module.exports = routes;
