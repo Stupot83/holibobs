@@ -9,7 +9,7 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "DATABASE_STRING='mongodb://localhost:27017/holibobs_test' jest",
+    "test": "DATABASE_STRING='mongodb://localhost:27017/holibobs_test' jest"
   },
   "repository": {
     "type": "git",

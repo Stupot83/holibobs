@@ -4,7 +4,7 @@ const Holiday = require("../../schema/Holiday");
 const User = require("../../schema/User");
 const DataAccess = require('../../dataAccess/dataAccess');
 
-routes.post("/holiday", (req, res) => {
+routes.post("/", (req, res) => {
   const newHoliday = new Holiday({
     userId: req.cookies.userId,
     startDate: req.body.startDate,
@@ -18,7 +18,7 @@ routes.post("/holiday", (req, res) => {
     .catch(err => console.log(err));
 });
 
-routes.route('/holidays').get((req, res, next) => {
+routes.route('/').get((req, res, next) => {
     var userSearchObject = {
       _id: req.cookies.userId
     };
