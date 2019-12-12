@@ -22,7 +22,6 @@ class Holiday extends Component {
 
     axios.post('/api/holidays/holiday', { startDate, endDate, location })
       .then((result) => {
-       
       });
   };
 

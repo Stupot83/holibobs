@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
-import Countdown from "../countdown/Countdown";
+import Countdown from "./Countdown";
 import Holiday from "./Holiday";
-import axios from "axios";
+import Holidays from "./Holidays";
 
 class Dashboard extends Component {
   constructor() {
@@ -24,6 +24,7 @@ class Dashboard extends Component {
     return (
       <div className="container">
         <Holiday />
+        <Holidays />
         <div className="row" style={{ marginTop: "3rem" }}>
           <div
             className="col s8 darken-4 z-depth-5 Dashboard"
