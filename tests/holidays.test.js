@@ -6,17 +6,17 @@ require("./mongodb_helper");
 describe('Test the holidays path', () => {
 
     beforeAll((done) => {
-        const user = {
-         name: "Lena",
-         email: "lena@lena.com",
-         password: "helloworld",
-         password2: "helloworld"
-        }
-        request(app)
-        .post('/api/register')
-        .send(user)
-        .then(() => console.log("user created"))
-        .catch((err) => console.log(err));
+    //     const user = {
+    //      name: "Lena",
+    //      email: "lena@lena.com",
+    //      password: "helloworld",
+    //      password2: "helloworld"
+    //     }
+    //     request(app)
+    //     .post('/api/register')
+    //     .send(user)
+    //     .then(() => console.log("user created"))
+    //     .catch((err) => console.log(err));
 
         mongoose.connection.collections.holidays.drop(function() {
             return done();
