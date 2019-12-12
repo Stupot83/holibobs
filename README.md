@@ -9,13 +9,13 @@
 ```
 ## Holiday Planner User Stories ##
 
- - [ ] (1) Sign Up
- - [ ] (2) Log In
- - [ ] (3) Log Out
- - [ ] (4) Create holiday data
+ - [x] (1) Sign Up
+ - [x] (2) Log In
+ - [x] (3) Log Out
+ - [x] (4) Create holiday data
  - [ ] (5) Edit holiday data
  - [ ] (6) Delete holiday data
- - [ ] (7) Countdown
+ - [x] (7) Countdown
  - [ ] (8) Predicted Weather/Temperature
  - [ ] (9) View Playlist
  - [ ] (10) Playlist by country
