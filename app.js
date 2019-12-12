@@ -30,7 +30,8 @@ app.use(cookieParser());
 
 app.use(bodyParser.json({ limit: "50mb", extended: true }));
 
-mongoose.connect(process.env.DATABASE, {
+const DBString = process.env.DATABASE_STRING || process.env.DATABASE 
+mongoose.connect( DBString, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -41,7 +42,7 @@ mongoose.Promise = global.Promise;
 
 mongoose.connection
   .on("connected", () => {
-    console.log(`Mongoose connection open on ${process.env.DATABASE}`);
+    console.log(`Mongoose connection open on ${DBString}`);
   })
   .on("error", err => {
     console.log(`Connection error: ${err.message}`);

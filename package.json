@@ -9,7 +9,8 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "jest" 
+    "test": "DATABASE_STRING='mongodb://localhost:27017/holibobs_test' jest",
+    "db:reset": "mongo holibobs_test --eval 'db.holidays.drop()'"
   },
   "repository": {
     "type": "git",
