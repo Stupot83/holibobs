@@ -2,20 +2,25 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const holidaySchema = new Schema({
-    startDate: {
-        type: Date,
-        required: true
-    },
+  userId: {
+    type: String,
+    required: true
+  },
 
-    endDate: {
-        type: Date, 
-        required: true
-    },
+  startDate: {
+    type: Date,
+    required: true
+  },
 
-    location: {
-        type: String,
-        required: true
-    },
+  endDate: {
+    type: Date,
+    required: true
+  },
+
+  location: {
+    type: String,
+    required: true
+  }
 });
 
 const Holiday = mongoose.model("holidays", holidaySchema);

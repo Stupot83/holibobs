@@ -2,6 +2,7 @@ const dotenv = require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
 const passport = require("passport");
 const users = require("./routes/api/users");
 const holidays = require("./routes/api/holidays");
@@ -24,6 +25,8 @@ app.use(
     extended: false
   })
 );
+
+app.use(cookieParser());
 
 app.use(bodyParser.json({ limit: "50mb", extended: true }));
 

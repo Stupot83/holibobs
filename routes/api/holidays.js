@@ -4,6 +4,7 @@ const Holiday = require("../../schema/Holiday");
 
 routes.post("/holiday", (req, res) => {
   const newHoliday = new Holiday({
+    userId: req.cookies.userId,
     startDate: req.body.startDate,
     endDate: req.body.endDate,
     location: req.body.location
