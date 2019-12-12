@@ -2,8 +2,10 @@ const dotenv = require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
 const passport = require("passport");
 const users = require("./routes/api/users");
+const holidays = require("./routes/api/holidays");
 const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 8000;
@@ -23,6 +25,8 @@ app.use(
     extended: false
   })
 );
+
+app.use(cookieParser());
 
 app.use(bodyParser.json({ limit: "50mb", extended: true }));
 
@@ -48,8 +52,6 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 app.use("/api/users", users);
-app.post("/holidays", (req, res) => {
-console.log(req)
-});
+app.use("/api/holidays", holidays);
 
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));

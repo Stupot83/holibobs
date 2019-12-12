@@ -59,6 +59,8 @@ router.post("/login", (req, res) => {
           name: user.name
         };
 
+        res.cookie('userId', user.id);
+
         jwt.sign(
           payload,
           keys.secretOrKey,
@@ -70,6 +72,7 @@ router.post("/login", (req, res) => {
               success: true,
               token: "Bearer " + token
             });
+
           }
         );
       } else {
