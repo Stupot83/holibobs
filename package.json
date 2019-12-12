@@ -8,7 +8,8 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "jest" 
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,8 @@
     "validator": "^12.1.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.1"
+    "jest": "^24.9.0",
+    "nodemon": "^2.0.1",
+    "supertest": "^4.0.2"
   }
 }
