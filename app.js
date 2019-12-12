@@ -9,7 +9,6 @@ const holidays = require("./routes/api/holidays");
 const cors = require("cors");
 const app = express();
 
-
 app.use(
   cors({
     allowedHeaders: ["sessionId", "Content-Type"],
@@ -54,4 +53,4 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use("/api/holidays", holidays);
 
-module.exports = app 
+module.exports = app;
