@@ -39,16 +39,30 @@ describe("Test the user path", () => {
         done();
       });
   });
+
   test("user can login if they're registered", done => {
     const user = {
       email: "lena@lena.com",
       password: "helloworld"
     };
     request(app)
-    .post("/api/users/login")
-    .send(user)
-    .expect(200, () => {
-      done();
-    });
-  })
+      .post("/api/users/login")
+      .send(user)
+      .expect(200, () => {
+        done();
+      });
+  });
+
+  test("user can't login if they're not registered", done => {
+    const user = {
+      email: "migle@robsgrandmas.com",
+      password: "lifeisbeautiful"
+    };
+    request(app)
+      .post("/api/users/login")
+      .send(user)
+      .expect(400, () => {
+        done();
+      });
+  });
 });
