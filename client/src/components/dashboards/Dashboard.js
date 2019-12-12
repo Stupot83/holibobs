@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import Countdown from "../countdown/Countdown";
 import Holiday from "./Holiday";
+import axios from "axios";
 
 class Dashboard extends Component {
   constructor() {
@@ -43,6 +45,7 @@ class Dashboard extends Component {
                 Logout
               </button>
             </div>
+            <Countdown />
           </div>
         </div>
       </div>
