@@ -2,27 +2,10 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import Countdown from "../countdown/Countdown"
 import axios from "axios";
-import countdown from "countdown";
 
 class Dashboard extends Component {
-  constructor() {
-    super();
-    this.state = {
-      location: "Festive Holiday",
-      startDate: "2019-12-20",
-      endDate: "2020-01-01",
-      timeLeft: "",
-    };
-    setInterval(() => {if (this.state.startDate)
-      this.tick() }, 1000)
-  }
-
-  tick () {
-    this.setState({
-      timeLeft: countdown( new Date(this.state.startDate) ).toString()
-    })
-  }
 
   onLogoutClick = e => {
     e.preventDefault();
@@ -81,9 +64,7 @@ class Dashboard extends Component {
                 <input type="submit" value="submit" />
               </form>
             </div>
-            <div className="row" style={{ marginTop: "3rem" }}>
-              <p className="countdown">{this.state.timeLeft.toString()} to go until {this.state.location}</p>
-            </div>
+            <Countdown />
           </div>
         </div>
       </div>
