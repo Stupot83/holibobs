@@ -17,7 +17,7 @@ class Holiday extends Component {
 
   onFormSubmit = (e) => {
     e.preventDefault();
-
+   
     const { startDate, endDate, location } = this.state;
 
     axios.post('/api/holidays/', { startDate, endDate, location })

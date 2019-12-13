@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import DataTable from './DataTable';
+import HolidayCard from './HolidayCard';
+import { CardGroup } from 'react-bootstrap';
 
 export default class Holidays extends Component {
 
@@ -19,30 +20,19 @@ export default class Holidays extends Component {
             });
     }
 
-    dataTable() {
+    holidayCard() {
         return this.state.holidays.map((data, i) => {
-            return <DataTable obj={data} key={i} />;
+            return <HolidayCard obj={data} key={i} />;
         });
     }
 
     render() {
         return (
-            <div className="wrapper-users">
-                <div className="container">
-                    <table className="table table-striped table-dark">
-                        <thead className="thead-dark">
-                            <tr>
-                                <td>StartDate:</td>
-                                <td>EndDate:</td>
-                                <td>Location:</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.dataTable()}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            <CardGroup>
+
+                {this.holidayCard()}
+
+            </CardGroup> 
         )
     }
 }
