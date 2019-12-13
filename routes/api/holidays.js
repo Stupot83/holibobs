@@ -34,4 +34,32 @@ routes.route('/').get((req, res, next) => {
     });
   });
 
+  routes.route('/:id').get((req, res, next) => {
+    var userSearchObject = {
+      _id: req.cookies.userId
+    };
+  
+    DataAccess.findOne(User, userSearchObject, res, next, () => {
+      var holidaySearchObject = {
+        _id: req.params.id
+      };
+  
+      DataAccess.findOne(Holiday, holidaySearchObject, res, next, (holiday) => {
+          res.json(holiday);
+      });
+    });
+  });
+
+  routes.get('/delete/:id', (req, res, next) => {
+
+    var holidaySearchObject = {
+      _id: req.params.id
+    };
+  
+    DataAccess.deleteOne(Holiday, holidaySearchObject, res, next, () => {
+      res.redirect('/dashboard');
+    });
+  });
+
+
 module.exports = routes;
