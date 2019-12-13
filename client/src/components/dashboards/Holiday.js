@@ -20,7 +20,7 @@ class Holiday extends Component {
 
     const { startDate, endDate, location } = this.state;
 
-    axios.post('/api/holidays/holiday', { startDate, endDate, location })
+    axios.post('/api/holidays/', { startDate, endDate, location })
       .then((result) => {
       });
   };

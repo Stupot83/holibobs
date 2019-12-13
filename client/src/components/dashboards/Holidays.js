@@ -10,7 +10,7 @@ export default class Holidays extends Component {
     }
 
     componentDidMount() {
-        axios.get('/api/holidays/holidays')
+        axios.get('/api/holidays/')
             .then(res => {
                 this.setState({ holidays: res.data });
             })
