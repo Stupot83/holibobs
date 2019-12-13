@@ -3,6 +3,10 @@ describe("Register page", () => {
     cy.visit("/register");
   });
 
+  it("has a title", () => {
+    cy.get(".link").should("contain", "HOLIBOBS");
+  });
+
   it("can submit registration and redirect to login", () => {
 
     cy.get('input[id="name"]')

@@ -3,6 +3,10 @@ describe("Login page", () => {
     cy.visit("/login");
   });
 
+  it("has a title", () => {
+    cy.get(".link").should("contain", "HOLIBOBS");
+  });
+
   it("can submit login and redirect to dashboard", () => {
     cy.get('input[id="email"]')
       .type("Terry@Wogan.com")
@@ -15,5 +19,15 @@ describe("Login page", () => {
     cy.get("#login").click();
 
     cy.location("pathname").should("eq", "/dashboard");
+  });
+});
+
+describe("Dashboard page", () => {
+  it("has a title", () => {
+    cy.get(".link").should("contain", "HOLIBOBS");
+  });
+
+  it("has a button to logout", () => {
+    cy.get(".logout").should("contain", "Logout");
   });
 });
