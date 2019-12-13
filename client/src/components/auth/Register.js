@@ -125,7 +125,7 @@ class Register extends Component {
                     <span className="red-text">{errors.password2}</span>
                   </div>
                   <div className="register-button">
-                    <button type="submit" className="input-submit">
+                    <button id="register" type="submit" className="input-submit">
                       Sign up
                     </button>
                     <p className="button-link">

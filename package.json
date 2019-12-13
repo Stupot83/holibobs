@@ -8,7 +8,9 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test:cypress": "concurrently \"npm run dev\" \"npm run cypress\"",
+    "cypress": "cypress open"
   },
   "repository": {
     "type": "git",
@@ -37,6 +39,8 @@
     "validator": "^12.1.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.1"
+    "cypress": "^3.7.0",
+    "nodemon": "^2.0.1",
+    "start-server-and-test": "^1.10.6"
   }
 }
