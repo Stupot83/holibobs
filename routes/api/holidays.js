@@ -50,5 +50,16 @@ routes.route('/').get((req, res, next) => {
     });
   });
 
+  routes.get('/delete/:id', (req, res, next) => {
+
+    var holidaySearchObject = {
+      _id: req.params.id
+    };
+  
+    DataAccess.deleteOne(Holiday, holidaySearchObject, res, next, () => {
+      res.redirect('/dashboard');
+    });
+  });
+
 
 module.exports = routes;
