@@ -14,7 +14,7 @@
  - [x] (3) Log Out
  - [x] (4) Create holiday data
  - [ ] (5) Edit holiday data
- - [ ] (6) Delete holiday data
+ - [x] (6) Delete holiday data
  - [x] (7) Countdown
  - [ ] (8) Predicted Weather/Temperature
  - [ ] (9) View Playlist
