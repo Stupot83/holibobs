@@ -103,7 +103,7 @@ class Login extends Component {
                     </span>
                   </div>
                   <div className="login-button">
-                    <button type="submit" className="input-submit">
+                    <button id="login" type="submit" className="input-submit">
                       Login
                   </button>
                     <p className="button-link">

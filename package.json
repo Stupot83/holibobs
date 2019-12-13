@@ -10,6 +10,8 @@
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "DATABASE_STRING='mongodb://localhost:27017/holibobs_test' jest"
+    "test:cypress": "concurrently \"npm run dev\" \"npm run cypress\"",
+    "cypress": "cypress open"
   },
   "repository": {
     "type": "git",
@@ -41,5 +43,7 @@
     "jest": "^24.9.0",
     "nodemon": "^2.0.1",
     "supertest": "^4.0.2"
+    "cypress": "^3.7.0",
+    "start-server-and-test": "^1.10.6"
   }
 }

@@ -25,24 +25,10 @@ class Dashboard extends Component {
       <div className="container">
         <Holiday />
         <Holidays />
-        <div className="row" style={{ marginTop: "3rem" }}>
-          <div
-            className="col s8 darken-4 z-depth-5 Dashboard"
-            style={{ height: "80vh" }}
-          >
-            <div className="row" style={{ marginTop: "1rem" }}>
-              <button
-                style={{
-                  width: "200px",
-                  height: "100px",
-                  borderRadius: "3px",
-                  letterSpacing: "1.5px",
-                  marginTop: "0.7rem",
-                  marginLeft: "1rem"
-                }}
-                onClick={this.onLogoutClick}
-                className="btn btn-large waves-effect waves-light hoverable blue accent-3 left"
-              >
+        <div className="row">
+          <div className="Dashboard">
+            <div className="row">
+              <button onClick={this.onLogoutClick} className="logout">
                 Logout
               </button>
             </div>
