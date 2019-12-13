@@ -34,4 +34,21 @@ routes.route('/').get((req, res, next) => {
     });
   });
 
+  routes.route('/:id').get((req, res, next) => {
+    var userSearchObject = {
+      _id: req.cookies.userId
+    };
+  
+    DataAccess.findOne(User, userSearchObject, res, next, () => {
+      var holidaySearchObject = {
+        _id: req.params.id
+      };
+  
+      DataAccess.findOne(Holiday, holidaySearchObject, res, next, (holiday) => {
+          res.json(holiday);
+      });
+    });
+  });
+
+
 module.exports = routes;

@@ -13,7 +13,7 @@ class HolidayCard extends Component {
                         <ListGroupItem>Start date: {this.props.obj.startDate}</ListGroupItem>
                         <ListGroupItem>End date: {this.props.obj.endDate}</ListGroupItem>
                     </ListGroup>
-                    <Card.Link href="/:id">View</Card.Link>
+                    <Card.Link href={"/holiday/" + this.props.obj._id}>View</Card.Link>
                 </Card.Body>
             </Card>
         );
