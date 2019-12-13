@@ -5,6 +5,7 @@ import { logoutUser } from "../../actions/authActions";
 import Countdown from "./Countdown";
 import Holiday from "./Holiday";
 import Holidays from "./Holidays";
+import './dashboard.scss'
 
 class Dashboard extends Component {
   constructor() {
@@ -23,8 +24,10 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="container">
-        <Holiday />
-        <Holidays />
+        <div className="container-flex">
+          <Holiday />
+          <Holidays />
+        </div>
         <div className="row">
           <div className="Dashboard">
             <div className="row">

@@ -1,0 +1,42 @@
+.container{
+    &-flex {
+        display: flex;
+    }
+}
+
+.holiday-form {
+    &__card {
+        background-color: rgba(255,255,255, 0.70);
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        margin: 20px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    &__input {
+        display: block;
+        padding: 0 20px;
+        border: none;
+        border-bottom: 3px solid #022444;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        background: transparent;
+        font-size: 0.8rem;
+    }
+
+    &__submit {
+        border: 2px solid #022444;
+        background-color: #022444;
+        padding: 5px 30px;
+        border-radius: 15px; 
+        color: #fff;
+        margin-top: 20px;
+        line-height: 1.2rem;
+
+        &:hover {
+            background-color: transparent;
+            color: #022444;
+            cursor: pointer;
+        }
+    }
+}
