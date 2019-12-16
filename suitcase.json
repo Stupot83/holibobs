@@ -1,0 +1,13 @@
+{
+    "suitcases" : [
+        {
+            "weather": "hot",
+            "items": ["t-shirt", "shorts", "swimwear", "hoodie", "underwear", "socks", "trainers", "sandals"]
+        },
+        {
+            "weather": "cold",
+            "items": ["t-shirt", "trousers", "hoodie", "coat", "underwear", "socks", "boots", "had", "gloves", "scarf"]
+        }
+    ]    
+}
+
