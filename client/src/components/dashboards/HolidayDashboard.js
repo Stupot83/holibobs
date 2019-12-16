@@ -43,7 +43,7 @@ export default class HolidayDashBoard extends Component {
         <button onClick={this.delete}>Delete</button>
         <a href="/dashboard">Back to DashBoard</a>
         <div>
-          <WeatherForecast />
+          <WeatherForecast location = {this.state.holiday.location}/>
         </div>
       </div>
     );
