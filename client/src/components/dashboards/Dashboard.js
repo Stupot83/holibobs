@@ -2,14 +2,11 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
-import Countdown from "./Countdown";
 import Holiday from "./Holiday";
 import Holidays from "./Holidays";
+import './dashboard.scss'
 
 class Dashboard extends Component {
-  constructor() {
-    super();
-  }
 
   onLogoutClick = e => {
     e.preventDefault();
@@ -23,8 +20,10 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="container">
-        <Holiday />
-        <Holidays />
+        <div className="container-flex">
+          <Holiday />
+          <Holidays />
+        </div>
         <div className="row">
           <div className="Dashboard">
             <div className="row">
@@ -32,7 +31,6 @@ class Dashboard extends Component {
                 Logout
               </button>
             </div>
-            <Countdown />
           </div>
         </div>
       </div>

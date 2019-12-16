@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import HolidayCard from './HolidayCard';
-import { CardGroup } from 'react-bootstrap';
 
 export default class Holidays extends Component {
 
@@ -29,11 +28,9 @@ export default class Holidays extends Component {
 
     render() {
         return (
-            <CardGroup>
-
+            <div className="holidays-container">
                 {this.holidayCard()}
-
-            </CardGroup> 
+            </div> 
         )
     }
 }

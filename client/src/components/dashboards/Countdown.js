@@ -6,24 +6,24 @@ class Countdown extends Component {
         super();
         this.state = {
             location: "",
-            startDate: "",
             timeLeft: "",
         }
-        setInterval(() => {if (this.state.startDate)
+        setInterval(() => {if (this.props.startDate)
             this.tick() }, 1000)
     }
 
     tick () {
         this.setState({
-          timeLeft: countdown( new Date(this.state.startDate) ).toString()
+          timeLeft: countdown(new Date(this.props.startDate))
         })
       }
 
     render () {
-       return(<div className="row" style={{ marginTop: "3rem" }}>
-              <p className="countdown">{this.state.timeLeft.toString()} to go until {this.state.location}</p>
-            </div>)
-    }
+      return (
+        <div className="">
+          <p className="countdown">{this.state.timeLeft.toString()} till {this.props.location}</p>
+        </div>
+    )}
 }
 
 export default Countdown;

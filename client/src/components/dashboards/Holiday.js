@@ -29,10 +29,12 @@ class Holiday extends Component {
     const { startDate, endDate, location } = this.state;
 
     return (
-      <form onSubmit={this.onFormSubmit}>
+      <form className="holiday-form__card" onSubmit={this.onFormSubmit}>
+        <p>Add new holiday</p>
         <label>Start date</label>
         <input
           type="date"
+          className="holiday-form__input"
           name="startDate"
           value={startDate}
           onChange={this.onChange}
@@ -40,6 +42,7 @@ class Holiday extends Component {
         <label>End date</label>
         <input
           type="date"
+          className="holiday-form__input"
           name="endDate"
           value={endDate}
           onChange={this.onChange}
@@ -47,11 +50,12 @@ class Holiday extends Component {
         <label>Location</label>
         <input
           type="text"
+          className="holiday-form__input"
           name="location"
           value={location}
           onChange={this.onChange}
         />
-        <input type="submit" value="submit" />
+        <input className="holiday-form__submit" type="submit" value="submit" />
       </form>
     );
   }
