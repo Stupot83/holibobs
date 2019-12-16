@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import WeatherForecast from "./WeatherForecast";
 
 export default class HolidayDashBoard extends Component {
   constructor(props) {
@@ -41,6 +42,9 @@ export default class HolidayDashBoard extends Component {
         <p>{this.state.holiday.endDate}</p>
         <button onClick={this.delete}>Delete</button>
         <a href="/dashboard">Back to DashBoard</a>
+        <div>
+          <WeatherForecast />
+        </div>
       </div>
     );
   }
