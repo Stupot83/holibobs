@@ -30,6 +30,7 @@ class Holiday extends Component {
 
     return (
       <form className="holiday-form__card" onSubmit={this.onFormSubmit}>
+        <p>Add new holiday</p>
         <label>Start date</label>
         <input
           type="date"

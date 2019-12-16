@@ -2,15 +2,11 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
-import Countdown from "./Countdown";
 import Holiday from "./Holiday";
 import Holidays from "./Holidays";
 import './dashboard.scss'
 
 class Dashboard extends Component {
-  constructor() {
-    super();
-  }
 
   onLogoutClick = e => {
     e.preventDefault();
@@ -35,7 +31,6 @@ class Dashboard extends Component {
                 Logout
               </button>
             </div>
-            <Countdown />
           </div>
         </div>
       </div>
