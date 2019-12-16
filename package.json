@@ -13,6 +13,11 @@
     "test:cypress": "concurrently \"npm run dev\" \"npm run cypress\"",
     "cypress": "cypress open"
   },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "cypress/integration"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Stupot83/holibobs.git"
