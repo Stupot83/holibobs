@@ -1,20 +1,30 @@
 .travel-container {
-background-color: #FFB142;
-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-margin: 20px;
-padding: 20px 30px;
-width: 350px;
-border-radius: 6%;
+    background-color: #FFB142;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: 20px;
+    padding: 40px 40px;
+    width: 300px;
+    height: 400px;
+    border-radius: 6%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-left: 200px;
+    margin-top: 30px;
 }
 
 .travel-heading {
- color: white;
- font-size: 25px;
- border-bottom-style: solid;
+    color: white;
+    font-size: 20px;
+    border-bottom-style: solid;
+    letter-spacing: 2px;
 }
 
 .location-name {
     color: white;
+}
+.location-original {
+    font-size: 26px;
+    letter-spacing: 1px;
 }
 
 .start-word {
@@ -24,6 +34,64 @@ border-radius: 6%;
     color: white;
 }
 
+.travel-dates {
+ display: flex;
+ justify-content: space-between;
+
+    &__image {
+        height: 30px;
+        width: 40px;
+    }
+}
+.predicted-weather-text {
+    color: white;
+}
+
 .back-dashboard-link {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    color: #022444;
+}
+
+.delete-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: #022444;
+    color: white;
+}
+
+.suitcase {
+    &-container {
+        height: 600px;
+        width: 400px;
+        background-image: url(./tag.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: -8px;
+        right: 200px;
+        padding: 200px 10px 5px 30px;
+        font-weight: bold;
+    }
+    &-heading {
+        color: #022444;
+        font-size: 24px;
+    }
+
+    &-divider {
+        height: 2px;
+        width: 200px;
+        margin-bottom: 15px;
+        background-color: #022444;
+    }
+
+    &-text {
+        color: #022444;
+    }
 
 }
