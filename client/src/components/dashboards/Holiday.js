@@ -25,6 +25,10 @@ class Holiday extends Component {
       });
   };
 
+  refreshPage() {
+    window.location.reload(true);
+  }
+
   render() {
     const { startDate, endDate, location } = this.state;
 
@@ -55,7 +59,7 @@ class Holiday extends Component {
           value={location}
           onChange={this.onChange}
         />
-        <input className="holiday-form__submit" type="submit" value="submit" />
+        <input onClick={this.refreshPage} className="holiday-form__submit" type="submit" value="submit" />
       </form>
     );
   }
