@@ -84,6 +84,26 @@
     }
 }
 
+
 .holiday-nav {
  grid-area: header;
+
+.weather-container {
+    text-align: center;
+
+    .title {
+        margin-bottom: 20px;
+    }
+}
+
+.outline-left {
+    display: inline-block;
+    margin-left: 20px;
+    border: 1px solid grey;
+}
+
+.outline-right {
+    display: inline-block;
+    margin-left: 20px;
+    border: 1px solid grey;
 }
