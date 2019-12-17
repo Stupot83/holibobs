@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "./HolidayDashboard.scss"
-const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+import "./HolidayDashboard.scss";
 import WeatherForecast from "./WeatherForecast";
 import "./dashboard.scss";
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
 
 export default class HolidayDashBoard extends Component {
   constructor(props) {
@@ -104,6 +105,7 @@ export default class HolidayDashBoard extends Component {
           <p className="suitcase-text">1 X T-shirt</p>
           <p className="suitcase-text">1 X T-shirt</p>
         </div>
+    </div>
     </div>
     );
   }
