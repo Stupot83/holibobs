@@ -1,7 +1,7 @@
 import React from 'react';
 var moment = require('moment');
 
-const DayCard = ({ reading, degreeType }) => {
+const DayCard = ({ reading }) => {
   let newDate = new Date();
   const weekday = reading.dt * 1000;
   newDate.setTime(weekday);
@@ -13,10 +13,10 @@ const DayCard = ({ reading, degreeType }) => {
   return (
     <div className="col-sm-2">
       <div className="card">
-        <h3 className="card-title">{moment(newDate).format('dddd')}</h3>
+        <h5 className="card-title">{moment(newDate).format('dddd')}</h5>
         <p className="text-muted">{moment(newDate).format('MMMM Do, h:mm a')}</p>
         <i className={imgURL}></i>
-        <h2>{celsius + "°C"}</h2>
+        <h4>{celsius + "°C"}</h4>
         <div className="card-body">
           <p className="card-text">{reading.weather[0].description}</p>
         </div>
