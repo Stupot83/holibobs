@@ -55,7 +55,7 @@ class Holiday extends Component {
           value={location}
           onChange={this.onChange}
         />
-        <input className="holiday-form__submit" type="submit" value="submit" />
+        <input className="holiday-form__submit" id="submit" type="submit" value="submit" />
       </form>
     );
   }
