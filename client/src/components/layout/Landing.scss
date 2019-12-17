@@ -1,52 +1,80 @@
-.landing {
-  &__container {
-    position: absolute;
-    height: 300px;
-    width: 400px;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    text-align: center;
-  }
-
-  &-heading {
-    &--main {
-      font-size: 60px;
-      letter-spacing: 10px;
-      margin-top: 30px; 
+.Landing {
+  .landing {
+    &__container {
+      position: absolute;
+      height: 300px;
+      width: 400px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      text-align: center;
     }
-    &--sub {
-      font-size: 25px;
-      letter-spacing: 10px;
+
+    &-heading {
+      &--main {
+        font-size: 60px;
+        letter-spacing: 10px;
+        margin-top: 30px;
+      }
+      &--sub {
+        font-size: 25px;
+        letter-spacing: 10px;
+      }
     }
-  }
 
-  &__button-container {
-    margin: 30px auto;
-    display: flex;
-    justify-content: center;
-  }
+    &__button-container {
+      margin: 30px auto;
+      display: flex;
+      justify-content: center;
+    }
 
-  &__button {
-    color: #fff;
-    border: 2px solid #022444;
-    background-color: #022444;
-    padding: 5px 30px;
-    border-radius: 15px; 
-    margin: 0 10px;
-    &:hover {
+    &__button {
+      color: #fff;
+      border: 2px solid #022444;
+      background-color: #022444;
+      padding: 5px 30px;
+      border-radius: 15px;
+      margin: 0 10px;
+      &:hover {
         cursor: pointer;
         background-color: transparent;
         color: #022444;
+      }
     }
 
+    &__image {
+      height: 150px;
+      width: 200px;
+      animation: swing ease-in-out 1s infinite alternate;
+      transform-origin: center -20px;
+    }
   }
 
-  &__image {
-    height: 150px;
-    width:  200px;
+  .plane {
+    margin-top: 20px;
+    height: 75px;
+    width: 125px;
+    animation: fly 5s ease-in-out;
+    margin-left: 1100px;
   }
 
+  @keyframes swing {
+    0% {
+      transform: rotate(3deg);
+    }
+    100% {
+      transform: rotate(-3deg);
+    }
+  }
+  
+  @keyframes fly {
+    0% {
+      margin-left: -100px;
+    }
+    100% {
+      margin-left: 1100px;
+    }
+  }
 }
