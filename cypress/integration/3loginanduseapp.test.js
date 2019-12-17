@@ -1,6 +1,16 @@
 describe("Login page", () => {
   beforeEach(() => {
     cy.visit("/login");
+    
+    cy.get('input[id="email"]')
+    .type("Terry@Wogan.com")
+    .should("have.value", "Terry@Wogan.com");
+
+  cy.get('input[id="password"]')
+    .type("Pudsey")
+    .should("have.value", "Pudsey");
+
+  cy.get("#login").click();
   });
 
   it("has a title", () => {
