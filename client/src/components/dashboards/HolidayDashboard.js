@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Countdown from './Countdown';
+import Suitcase from './Suitcase';
 
 export default class HolidayDashBoard extends Component {
   constructor(props) {
@@ -39,6 +41,9 @@ export default class HolidayDashBoard extends Component {
         <p>{this.state.holiday.location}</p>
         <p>{this.state.holiday.startDate}</p>
         <p>{this.state.holiday.endDate}</p>
+        <Countdown location={this.state.holiday.location} startDate={this.state.holiday.startDate}/>
+        <Suitcase location={this.state.holiday.location} startDate={this.state.holiday.startDate}/>
+        <div><p>Recommended Suitcase Deets here</p></div>
         <button onClick={this.delete}>Delete</button>
         <a href="/dashboard">Back to DashBoard</a>
       </div>
