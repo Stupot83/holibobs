@@ -59,7 +59,7 @@ export default class HolidayDashBoard extends Component {
   
       <div className="travel-location">
         <p className="location-name"> Location</p>
-        <p className="location-original">{this.state.holiday.location}</p>
+        <p className="location-original">{this.state.holiday.location}, {this.state.holiday.country.toUpperCase()}</p>
       </div>
       
       <div className="travel-dates">
@@ -79,18 +79,18 @@ export default class HolidayDashBoard extends Component {
         <p className="predicted-weather-text">Predicted weather:</p>
       </div>
 
-<h1>Master</h1>
-      <div class="container-fluid col-md-12">
-        <div class="row">
-        <div class="col-md-3 outline-left">
+      <div className="container-fluid col-md-12">
+        <div className="row">
+        <div className="col-md-3 outline-left">
           <p>{this.state.holiday.location}</p>
+          <p>{this.state.holiday.country}</p>
           <p>{this.state.holiday.startDate}</p>
           <p>{this.state.holiday.endDate}</p>
           <button onClick={this.delete}>Delete</button>
           <a href="/dashboard">Back to DashBoard</a>
         </div>
-        <div class="col-md-8 outline-right">
-          <WeatherForecast location={this.state.holiday.location} />
+        <div className="col-md-8 outline-right">
+          <WeatherForecast location={this.state.holiday.location} country={this.state.holiday.location} />
         </div>
         </div>
       </div>

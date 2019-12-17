@@ -11,7 +11,7 @@ class HolidayCard extends Component {
     render() {
         return (
             <div className="holiday-card__container">
-                <a className="holiday-card__heading" href={"/holiday/" + this.props.obj._id}>{this.props.obj.location}</a>
+                <a className="holiday-card__heading" href={"/holiday/" + this.props.obj._id}>{this.props.obj.location}, {this.props.obj.country.toUpperCase()}</a>
                 <div className="holiday-card__dates">
                     <p><strong>Start date: </strong>{this.formatDate(this.props.obj.startDate)}</p>
                     <p><strong>End date: </strong> {this.formatDate(this.props.obj.endDate)}</p>
