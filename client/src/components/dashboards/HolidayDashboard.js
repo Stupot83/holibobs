@@ -76,8 +76,8 @@ export default class HolidayDashBoard extends Component {
   
       </div>
       <div className="holiday-nav">
-        <button className="delete-button" onClick={this.delete}>Remove my Holibob</button>
-        <a className="back-dashboard-link" href="/dashboard">Back to DashBoard</a>
+        <button className="delete-button" onClick={this.delete}>Remove Holibob</button>
+        <a className="back-dashboard-link" href="/dashboard">Back to Dashboard</a>
         </div>
         <div className="suitcase-container">
           <p className="suitcase-heading">Luggage List</p>

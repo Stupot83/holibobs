@@ -8,9 +8,7 @@ class Navbar extends Component {
       <div className="Navbar">
         <nav className="navbar-container">
           <div className="navbar-links">
-            <Link to="/" className="link">
-              HOLIBOBS
-            </Link>
+            <Link to="/" className="link">HOLIBOBS</Link>
           </div>
         </nav>
       </div>
