@@ -5,7 +5,7 @@ import Countdown from './Countdown';
 class HolidayCard extends Component {
     formatDate(date) {
         let newDate = new Date(date);
-        return newDate.getDate() + "/" + newDate.getMonth() + "/" + newDate.getFullYear()
+        return newDate.getDate() + "/" + (newDate.getMonth() + 1) + "/" + newDate.getFullYear()
     }
 
     render() {
