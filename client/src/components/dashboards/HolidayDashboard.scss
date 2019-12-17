@@ -1,5 +1,5 @@
 .travel-container {
-    background-color: #FFB142;
+    background-color: #D2E7FF;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     margin: 20px;
     padding: 40px 40px;
@@ -13,25 +13,22 @@
 }
 
 .travel-heading {
-    color: white;
+    color: #022444;
     font-size: 20px;
     border-bottom-style: solid;
     letter-spacing: 2px;
 }
 
 .location-name {
-    color: white;
+    color: #585858;
 }
 .location-original {
     font-size: 26px;
     letter-spacing: 1px;
 }
 
-.start-word {
-    color:white;
-}
-.end-word {
-    color: white;
+.start-word, .end-word, .predicted-weather-text {
+    color:#585858;
 }
 
 .travel-dates {
@@ -42,9 +39,6 @@
         height: 30px;
         width: 40px;
     }
-}
-.predicted-weather-text {
-    color: white;
 }
 
 .back-dashboard-link {
@@ -93,18 +87,18 @@
     }
 
     &-text {
-        color: #022444;
+        color: #585858;
     }
 
 }
 .holiday-nav {
 height: 100%;
-  width: 120px;
+  width: 140px;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgba(87, 101, 116, 0.6);
+  background-color: #FFEFD7;
   overflow-x: hidden;
   padding-top: 20px;
 }
