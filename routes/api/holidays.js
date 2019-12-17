@@ -9,7 +9,8 @@ routes.post("/", (req, res) => {
     userId: req.cookies.userId,
     startDate: req.body.startDate,
     endDate: req.body.endDate,
-    location: req.body.location
+    location: req.body.location,
+    country: req.body.country,
   });
 
   newHoliday

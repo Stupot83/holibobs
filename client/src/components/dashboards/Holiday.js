@@ -7,7 +7,8 @@ class Holiday extends Component {
     this.state = {
       startDate: "",
       endDate: "",
-      location: ""
+      location: "",
+      country: ""
     };
   }
 
@@ -18,15 +19,19 @@ class Holiday extends Component {
   onFormSubmit = (e) => {
     e.preventDefault();
    
-    const { startDate, endDate, location } = this.state;
+    const { startDate, endDate, location, country } = this.state;
 
-    axios.post('/api/holidays/', { startDate, endDate, location })
+    axios.post('/api/holidays/', { startDate, endDate, location, country })
       .then((result) => {
       });
   };
 
+  refreshPage() {
+    window.location.reload(true);
+  }
+
   render() {
-    const { startDate, endDate, location } = this.state;
+    const { startDate, endDate, location, country } = this.state;
 
     return (
       <form className="holiday-form__card" onSubmit={this.onFormSubmit}>
@@ -55,7 +60,15 @@ class Holiday extends Component {
           value={location}
           onChange={this.onChange}
         />
-        <input className="holiday-form__submit" type="submit" value="submit" />
+        <label>Country</label>
+        <input
+          type="text"
+          className="holiday-form__input"
+          name="country"
+          value={country}
+          onChange={this.onChange}
+        />
+        <input onClick={this.refreshPage} className="holiday-form__submit" type="submit" value="submit" />
       </form>
     );
   }

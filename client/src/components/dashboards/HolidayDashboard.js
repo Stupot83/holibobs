@@ -59,7 +59,7 @@ export default class HolidayDashBoard extends Component {
         <div className="travel-flex">
           <div className="travel-location">
             <p className="location-name"> Location</p>
-            <p className="location-original">{this.state.holiday.location}</p>
+            <p className="location-original">{this.state.holiday.location}, {this.state.holiday.country.toUpperCase()}</p>
           </div>
           <div className="travel-dates">
             <div className="start-date">
@@ -77,8 +77,9 @@ export default class HolidayDashBoard extends Component {
         </div>
       </div>
 
+
       <div class="">
-        <WeatherForecast location={this.state.holiday.location} />
+        <WeatherForecast location={this.state.holiday.location} country={this.state.holiday.location} />
       </div>
     
         <div className="suitcase-container">
