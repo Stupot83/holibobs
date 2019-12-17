@@ -8,18 +8,14 @@ const DayCard = ({ reading }) => {
 
   const celsius = Math.round(reading.main.temp);
 
-  const imgURL = `owf owf-${reading.weather[0].id} owf-5x`;
+  const imgURL = `owf owf-${reading.weather[0].id} owf-2x`;
 
   return (
-    <div className="col-sm-2">
-      <div className="card">
-        <h5 className="card-title">{moment(newDate).format('dddd')}</h5>
-        <p className="text-muted">{moment(newDate).format('MMMM Do, h:mm a')}</p>
+    <div className="">
+      <div className="">
+        <p className="">{moment(newDate).format('MMM Do')}</p>
         <i className={imgURL}></i>
         <h4>{celsius + "°C"}</h4>
-        <div className="card-body">
-          <p className="card-text">{reading.weather[0].description}</p>
-        </div>
       </div>
     </div>
   )
