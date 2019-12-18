@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import moment from 'moment';
 
 class Holiday extends Component {
   constructor() {
@@ -13,8 +14,8 @@ class Holiday extends Component {
   }
 
   onChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
+    this.setState({ [e.target.name]: e.target.value })
+  }
 
   onFormSubmit = (e) => {
     e.preventDefault();
@@ -33,6 +34,10 @@ class Holiday extends Component {
   render() {
     const { startDate, endDate, location, country } = this.state;
 
+    var dateTime = new Date();
+    var date = moment(dateTime).format("YYYY-MM-DD");
+    console.log(date);
+
     return (
       <form className="holiday-form__card" onSubmit={this.onFormSubmit}>
         <p>Add new holiday</p>
@@ -43,6 +48,7 @@ class Holiday extends Component {
           name="startDate"
           value={startDate}
           onChange={this.onChange}
+          min={date}
         />
         <label>End date</label>
         <input
@@ -51,6 +57,7 @@ class Holiday extends Component {
           name="endDate"
           value={endDate}
           onChange={this.onChange}
+          min={date}
         />
         <label>Location</label>
         <input

@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { logoutUser } from "../../actions/authActions";
 import Holiday from "./Holiday";
 import Holidays from "./Holidays";
-import './dashboard.scss'
 import Logout from "../auth/Logout-button"
+import './dashboard.scss'
 
 class Dashboard extends Component {
 
@@ -30,14 +27,4 @@ class Dashboard extends Component {
   }
 }
 
-// Dashboard.propTypes = {
-//   logoutUser: PropTypes.func.isRequired,
-//   auth: PropTypes.object.isRequired
-// };
-
-// const mapStateToProps = state => ({
-//   auth: state.auth
-// });
-
 export default Dashboard;
-// export default connect(mapStateToProps, { logoutUser })(Dashboard);
