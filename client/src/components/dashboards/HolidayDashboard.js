@@ -7,7 +7,7 @@ export default class HolidayDashBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      holiday: [],
+      holiday: null,
       id: this.props.match.params.id
     };
     this.delete = this.delete.bind(this);
@@ -36,6 +36,12 @@ export default class HolidayDashBoard extends Component {
   }
 
   render() {
+    const { holiday } = this.state;
+
+    if (holiday === null) {
+      return null;
+    }
+
     return (
       <div>
         <p>{this.state.holiday.location}</p>
@@ -43,7 +49,6 @@ export default class HolidayDashBoard extends Component {
         <p>{this.state.holiday.endDate}</p>
         <Countdown location={this.state.holiday.location} startDate={this.state.holiday.startDate}/>
         <Suitcase startDate={this.state.holiday.startDate} endDate={this.state.holiday.endDate}/>
-        <div><p>Recommended Suitcase Deets here</p></div>
         <button onClick={this.delete}>Delete</button>
         <a href="/dashboard">Back to DashBoard</a>
       </div>

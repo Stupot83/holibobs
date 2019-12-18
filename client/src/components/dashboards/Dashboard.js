@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import Holiday from "./Holiday";
 import Holidays from "./Holidays";
-import './dashboard.scss'
+import './dashboard.scss';
 
 class Dashboard extends Component {
 
