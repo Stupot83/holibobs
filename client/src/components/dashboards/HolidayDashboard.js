@@ -91,6 +91,11 @@ export default class HolidayDashBoard extends Component {
           <Logout />
           <a className="back-button" href="/dashboard"><img className="back-button__image" src="/images/back-icon-svg.svg"></img></a>
         </div>
+        <div className="delete-button__container">
+          <button onClick={this.delete} className="delete-button">
+            Delete holibob
+          </button>
+        </div>
       </div>
     );
   }
