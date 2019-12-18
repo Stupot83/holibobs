@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./HolidayDashboard.scss";
 import WeatherForecast from "./WeatherForecast";
+import Logout from "../auth/Logout-button"
 import "./dashboard.scss";
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -42,6 +43,7 @@ export default class HolidayDashBoard extends Component {
     let newDate = new Date(date);
     return newDate.getDate() + " " + months[newDate.getMonth()];
 }
+
 
   render() {
     const { holiday } = this.state;
@@ -89,7 +91,12 @@ export default class HolidayDashBoard extends Component {
           <p className="suitcase-text">1 X T-shirt</p>
           <p className="suitcase-text">1 X T-shirt</p>
         </div>
+        <div className="Dashboard">
+            <Logout />
+        </div>
     </div>
     );
   }
 }
+
+
