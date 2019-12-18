@@ -89,6 +89,7 @@ export default class HolidayDashBoard extends Component {
         </div>
         <div className="Dashboard">
           <Logout />
+          <a className="back-button" href="/dashboard"><img className="back-button__image" src="/images/back-icon-svg.svg"></img></a>
         </div>
       </div>
     );
