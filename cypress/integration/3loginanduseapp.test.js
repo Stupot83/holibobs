@@ -30,4 +30,22 @@ describe("Dashboard page", () => {
   it("has a button to logout", () => {
     cy.get(".logout").should("contain", "Logout");
   });
+
+  it("can add a holiday and creates a holiday dashboard", () => {
+    cy.get('input[name="startDate"]')
+      .type("2020-02-20")
+      .should("have.value", "2020-02-20");
+
+    cy.get('input[name="endDate"]')
+      .type("2020-03-01")
+      .should("have.value", "2020-03-01");
+
+    cy.get('input[name="location"]')
+      .type("Kiev")
+      .should("have.value", "Kiev");
+
+    cy.get("#submit").click();
+
+    cy.location("pathname").should("eq", "/dashboard");
+  });
 });

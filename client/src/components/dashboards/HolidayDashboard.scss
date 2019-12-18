@@ -1,0 +1,136 @@
+.travel {
+    &-container {
+        background-color: #D2E7FF;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        margin: 20px;
+        padding: 40px 40px;
+        width: 700px;
+        height: 200px;
+        border-radius: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        margin-left: 200px;
+        margin-top: 30px;
+    }
+
+    &-heading {
+        color: #022444;
+        font-size: 20px;
+        border-bottom-style: solid;
+        letter-spacing: 2px;
+    }
+}
+
+.travel {
+    &-flex {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-dates {
+        display: flex;
+        justify-content: space-between;
+        width: 200px;
+        align-items: center;
+        &__image {
+            height: 30px;
+            width: 40px;
+        }
+    }
+}
+
+.location-name {
+    color: #585858;
+}
+
+.location-original {
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+.start-word, .end-word, .predicted-weather-text {
+    color:#585858;
+}
+
+.back-dashboard-link {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    color: #022444;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.delete-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    background-color: #022444;
+    color: white;
+}
+
+.suitcase {
+    &-container {
+        height: 600px;
+        width: 400px;
+        background-image: url(./tag.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: -8px;
+        right: 200px;
+        padding: 200px 10px 5px 30px;
+        font-weight: bold;
+    }
+    &-heading {
+        color: #022444;
+        font-size: 24px;
+    }
+
+    &-divider {
+        height: 2px;
+        width: 200px;
+        margin-bottom: 15px;
+        background-color: #022444;
+    }
+
+    &-text {
+        color: #585858;
+    }
+}
+
+.holiday-nav {
+    height: 100%;
+    width: 140px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #FFEFD7;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.weather {
+    &-container {
+        background-color: #FFFBE9;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        margin: 20px;
+        padding: 30px 40px;
+        width: 700px;
+        height: 200px;
+        border-radius: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        margin-left: 200px;
+        margin-top: 30px;
+        text-align: left;
+
+        &__flex {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+}

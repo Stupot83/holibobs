@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Countdown from './Countdown';
 import Suitcase from './Suitcase';
+import WeatherForecast from "./WeatherForecast";
+import Logout from "../auth/Logout-button"
+import "./HolidayDashboard.scss";
+
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 export default class HolidayDashBoard extends Component {
   constructor(props) {
@@ -21,7 +25,7 @@ export default class HolidayDashBoard extends Component {
       .then(res => {
         this.setState({ holiday: res.data });
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
   }
@@ -32,8 +36,14 @@ export default class HolidayDashBoard extends Component {
       .then(console.log("Deleted"))
       .catch(err => console.log(err));
 
-      this.props.history.push("/dashboard");
+    this.props.history.push("/dashboard");
   }
+
+  formatDate(date) {
+    let newDate = new Date(date);
+    return newDate.getDate() + " " + months[newDate.getMonth()];
+  }
+
 
   render() {
     const { holiday } = this.state;
@@ -44,14 +54,45 @@ export default class HolidayDashBoard extends Component {
 
     return (
       <div>
-        <p>{this.state.holiday.location}</p>
-        <p>{this.state.holiday.startDate}</p>
-        <p>{this.state.holiday.endDate}</p>
-        <Countdown location={this.state.holiday.location} startDate={this.state.holiday.startDate}/>
-        <Suitcase startDate={this.state.holiday.startDate} endDate={this.state.holiday.endDate}/>
-        <button onClick={this.delete}>Delete</button>
-        <a href="/dashboard">Back to DashBoard</a>
+        <div className="travel-container">
+          <div className="travel-header">
+            <p className="travel-heading">HOLIBOBS</p>
+            <div className="travel-divider"></div>
+          </div>
+          <div className="travel-flex">
+            <div className="travel-location">
+              <p className="location-name"> Location</p>
+              <p className="location-original">{this.state.holiday.location}, {this.state.holiday.country.toUpperCase()}</p>
+            </div>
+            <div className="travel-dates">
+              <div className="start-date">
+                <p className="start-word">Start:</p>
+                <p className="start-date-format">{this.formatDate(this.state.holiday.startDate)}</p>
+              </div>
+              <div className="travel-dates__image">
+                <img className="travel-dates__image" src="/images/plane-icon.png"></img>
+              </div>
+              <div className="end-date">
+                <p className="end-word">End:</p>
+                <p className="end-date-format">{this.formatDate(this.state.holiday.endDate)}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <WeatherForecast location={this.state.holiday.location} country={this.state.holiday.location} />
+        </div>
+        <div className="suitcase-container">
+          <p className="suitcase-heading">Luggage List</p>
+          <div className="suitcase-divider"></div>
+          <Suitcase startDate={this.state.holiday.startDate} endDate={this.state.holiday.endDate} />
+        </div>
+        <div className="Dashboard">
+          <Logout />
+        </div>
       </div>
     );
   }
 }
+
+

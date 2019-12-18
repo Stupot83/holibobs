@@ -1,17 +1,10 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { logoutUser } from "../../actions/authActions";
 import Holiday from "./Holiday";
 import Holidays from "./Holidays";
-import './dashboard.scss';
+import Logout from "../auth/Logout-button"
+import './dashboard.scss'
 
 class Dashboard extends Component {
-
-  onLogoutClick = e => {
-    e.preventDefault();
-    this.props.logoutUser();
-  };
 
   onChange = event => {
     this.setState({ [event.target.name]: event.target.value });
@@ -26,11 +19,7 @@ class Dashboard extends Component {
         </div>
         <div className="row">
           <div className="Dashboard">
-            <div className="row">
-              <button onClick={this.onLogoutClick} className="logout">
-                Logout
-              </button>
-            </div>
+            <Logout />
           </div>
         </div>
       </div>
@@ -38,13 +27,4 @@ class Dashboard extends Component {
   }
 }
 
-Dashboard.propTypes = {
-  logoutUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
-};
-
-const mapStateToProps = state => ({
-  auth: state.auth
-});
-
-export default connect(mapStateToProps, { logoutUser })(Dashboard);
+export default Dashboard;
