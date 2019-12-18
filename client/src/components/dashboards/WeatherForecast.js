@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import DayCard from "./DayCard";
-import "./dashboard.scss";
+import "./HolidayDashboard.scss";
 
 export default class WeatherForecast extends Component {
   constructor(props) {
@@ -42,9 +42,9 @@ export default class WeatherForecast extends Component {
 
   render() {
     return (
-      <div className="container weather-container">
-        <h3 className="title">5-Day Forecast for {this.props.location}</h3>
-        <div className="row justify-content-center">
+      <div className="weather-container">
+        <p className="travel-heading">5-Day Forecast for {this.props.location}</p>
+        <div className="weather-container__flex">
           {this.formatDayCards()}
         </div>
       </div>
