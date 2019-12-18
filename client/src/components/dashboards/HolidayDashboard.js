@@ -80,7 +80,7 @@ export default class HolidayDashBoard extends Component {
       </div>
 
 
-      <div class="">
+      <div>
         <WeatherForecast location={this.state.holiday.location} country={this.state.holiday.location} />
       </div>
     
