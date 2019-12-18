@@ -22,7 +22,7 @@ class Landing extends Component {
                   Login
                 </a>
               </div>
-              <img src="/images/suitcase.png" className="landing__image"></img>
+              <img src="/images/suitcase.png" alt="icon" className="landing__image"></img>
             </div>
           </div>
         </div>
