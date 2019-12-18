@@ -51,7 +51,7 @@ class Suitcase extends Component {
             ? "Your holiday is " + this.state.holidayLength + " days long."
             : "Finding holiday length."}
         </p>
-        <p className="suitcase">
+        <div className="suitcase">
           {this.state.suitcase.map(item => {
             return (
               <p>
@@ -59,7 +59,7 @@ class Suitcase extends Component {
               </p>
             );
           })}
-        </p>
+        </div>
       </div>
     );
   }
