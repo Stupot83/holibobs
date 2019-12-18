@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import DayCard from "./DayCard";
-import "./dashboard.scss";
+import "./HolidayDashboard.scss";
 
 export default class WeatherForecast extends Component {
   constructor(props) {
@@ -14,8 +14,11 @@ export default class WeatherForecast extends Component {
 
   componentDidMount() {
     const city = this.props.location;
-    
-    const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&APPID=${"bd1c4f25b5879403911d89f1f83558d9"}`;
+
+    const countryCode = this.props.country;
+
+    const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?q=${city},${countryCode}&units=metric&APPID=${"bd1c4f25b5879403911d89f1f83558d9"}`;
+
     fetch(weatherURL)
       .then(res => res.json())
       .then(data => {
@@ -40,9 +43,9 @@ export default class WeatherForecast extends Component {
 
   render() {
     return (
-      <div className="container weather-container">
-        <h3 className="title">5-Day Forecast for {this.props.location}</h3>
-        <div className="row justify-content-center">
+      <div className="weather-container">
+        <p className="travel-heading">5-Day Forecast for {this.props.location}</p>
+        <div className="weather-container__flex">
           {this.formatDayCards()}
         </div>
       </div>
