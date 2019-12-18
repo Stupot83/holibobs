@@ -14,6 +14,7 @@ export default class WeatherForecast extends Component {
 
   componentDidMount() {
     const city = this.props.location;
+
     const countryCode = this.props.country;
 
     const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?q=${city},${countryCode}&units=metric&APPID=${"bd1c4f25b5879403911d89f1f83558d9"}`;

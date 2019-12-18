@@ -68,7 +68,7 @@ class Holiday extends Component {
           value={country}
           onChange={this.onChange}
         />
-        <input onClick={this.refreshPage} className="holiday-form__submit" type="submit" value="submit" />
+        <input onClick={this.refreshPage} className="holiday-form__submit" id="submit" type="submit" value="submit" />
       </form>
     );
   }

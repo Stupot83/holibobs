@@ -15,10 +15,10 @@ class Landing extends Component {
               <h1 className="landing-heading--main">HOLIBOBS</h1>
 
               <div className="landing__button-container">
-                <a href="/register" className="landing__button">
+                <a href="/register" className="landing__button register">
                   Register
                 </a>
-                <a href="/login" className="landing__button">
+                <a href="/login" className="landing__button login">
                   Login
                 </a>
               </div>
