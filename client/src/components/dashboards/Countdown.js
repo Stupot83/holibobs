@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import countdown from "countdown";
+import { thisTypeAnnotation } from "@babel/types";
 
 class Countdown extends Component {
     constructor(){
@@ -23,6 +24,11 @@ class Countdown extends Component {
       return (
         <div className="">
           <div className="countdown-item__container">
+            {this.state.timeLeft.months === 0 ? "" : <div className="countdown-item">
+              <p className="countdown-text__bold">{this.state.timeLeft.months}</p>
+              <p>months</p>
+            </div>}
+
             <div className="countdown-item">
               <p className="countdown-text__bold">{this.state.timeLeft.days}</p>
               <p>days</p>
