@@ -28,17 +28,5 @@ const holidaySchema = new Schema({
   }
 });
 
-holidaySchema.index(
-  {
-    startDate: 1,
-    endDate: 1,
-    location: 1,
-    country: 1
-  },
-{
-  unique: true
-}
-)
-
 const Holiday = mongoose.model("holidays", holidaySchema);
 module.exports = Holiday;
