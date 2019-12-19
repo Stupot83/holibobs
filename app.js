@@ -29,7 +29,7 @@ app.use(cookieParser());
 
 app.use(bodyParser.json({ limit: "50mb", extended: true }));
 
-const DBString = process.env.DATABASE_STRING || process.env.DATABASE 
+const DBString = process.env.DATABASE_STRING || process.env.DATABASE; 
 mongoose.connect( DBString, {
   useNewUrlParser: true,
   useUnifiedTopology: true
