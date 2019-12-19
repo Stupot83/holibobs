@@ -29,9 +29,11 @@ export default class WeatherForecast extends Component {
           {
             fullData: data.list,
             dailyData: dailyData
-          },
-          () => console.log(this.state)
+          }
         );
+        const listInfo = this.state.dailyData;
+        const averageTemp = listInfo.reduce((acc, curr) => acc + curr.main.temp, 0) / 5;
+        this.props.callbackFromParent(averageTemp);
       });
   }
 
