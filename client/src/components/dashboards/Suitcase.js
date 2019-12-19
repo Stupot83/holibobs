@@ -6,8 +6,8 @@ class Suitcase extends Component {
     this.state = {
       avgTemp: 24,
       holidayLength: this.getHolidayLength(),
-      suitcaseHot: ["tshirt", "jeans", "socks", "undies"],
-      suitcaseCold: ["vest", "shorts", "flipflops", "undies"],
+      suitcaseHot: ["vest", "shorts", "flip-flops", "undies"],
+      suitcaseCold: ["t-shirt", "jeans", "socks", "undies"],
       suitcase: []
     };
   }
