@@ -93,6 +93,7 @@ export default class HolidayDashBoard extends Component {
               </div>
               <div className="travel-dates__image">
                 <img
+                  alt="plane"
                   className="travel-dates__image"
                   src="/images/plane-icon.png"
                 ></img>
