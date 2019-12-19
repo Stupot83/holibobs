@@ -70,7 +70,7 @@ export default class HolidayDashBoard extends Component {
                 <p className="start-date-format">{this.formatDate(this.state.holiday.startDate)}</p>
               </div>
               <div className="travel-dates__image">
-                <img className="travel-dates__image" src="/images/plane-icon.png"></img>
+                <img className="travel-dates__image" alt="plane icon" src="/images/plane-icon.png"></img>
               </div>
               <div className="end-date">
                 <p className="end-word">End:</p>
@@ -89,7 +89,7 @@ export default class HolidayDashBoard extends Component {
         </div>
         <div className="Dashboard">
           <Logout />
-          <a className="back-button" href="/dashboard"><img className="back-button__image" src="/images/back-icon-svg.svg"></img></a>
+          <a className="back-button" href="/dashboard"><img className="back-button__image" alt="back button" src="/images/back-icon-svg.svg"></img></a>
         </div>
         <div className="delete-button__container">
           <button onClick={this.delete} className="delete-button">

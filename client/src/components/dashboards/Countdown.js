@@ -11,6 +11,7 @@ class Countdown extends Component {
         setInterval(() => {if (this.props.startDate)
             this.tick() }, 1000)
     }
+    
 
     tick () {
         this.setState({
@@ -21,7 +22,24 @@ class Countdown extends Component {
     render () {
       return (
         <div className="">
-          <p className="countdown">{this.state.timeLeft.toString()} till {this.props.location}</p>
+          <div className="countdown-item__container">
+            <div className="countdown-item">
+              <p className="countdown-text__bold">{this.state.timeLeft.days}</p>
+              <p>days</p>
+            </div>
+            <div className="countdown-item">
+              <p className="countdown-text__bold">{this.state.timeLeft.hours}</p>
+              <p>hours</p>
+            </div>
+            <div className="countdown-item">
+              <p className="countdown-text__bold">{this.state.timeLeft.minutes}</p>
+              <p>minutes</p>
+            </div>
+            <div className="countdown-item">
+              <p className="countdown-text__bold">{this.state.timeLeft.seconds}</p>
+              <p>seconds</p>
+            </div>
+          </div>
         </div>
     )}
 }

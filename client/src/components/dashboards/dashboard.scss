@@ -41,6 +41,11 @@
     font-size: 0.8rem;
   }
 
+  &__heading {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
   &__submit {
     border: 2px solid #022444;
     background-color: #022444;
@@ -66,6 +71,7 @@
 .holiday-card {
   &__container {
     max-height: 200px;
+    min-width: 300px;
     background-color: rgba(255, 255, 255, 0.7);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 20px;
@@ -106,4 +112,27 @@
   display: inline-block;
   margin-left: 20px;
   border: 1px solid grey;
+}
+
+
+.countdown {
+  
+  &-item {
+
+
+    &__container {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+    }
+  }
+
+  &-text {
+    &__bold {
+      font-size: 30px;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+
 }
