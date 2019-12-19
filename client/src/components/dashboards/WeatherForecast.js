@@ -29,9 +29,11 @@ export default class WeatherForecast extends Component {
           {
             fullData: data.list,
             dailyData: dailyData
-          },
-          () => console.log("blah", this.state)
+          }
         );
+        const listInfo = this.state.dailyData;
+        const averageTemp = listInfo.reduce((acc, curr) => acc + curr.main.temp, 0) / 5;
+        this.props.callbackFromParent(averageTemp);
       });
   }
 
@@ -39,12 +41,6 @@ export default class WeatherForecast extends Component {
     return this.state.dailyData.map((reading, index) => (
       <DayCard reading={reading} key={index} />
     ));
-  }
-
-  getAverageTemp() {
-  const averageTemp = this.state.dailyData.reduce((acc, curr) => acc + curr.main.temp, 0) / 5;
-  console.log(averageTemp);
-  return averageTemp;
   }
 
   render() {

@@ -4,7 +4,7 @@ class Suitcase extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      avgTemp: 24,
+      avgTemp: this.props.tempData,
       holidayLength: this.getHolidayLength(),
       suitcaseHot: ["tshirt", "jeans", "socks", "undies"],
       suitcaseCold: ["vest", "shorts", "flipflops", "undies"],
@@ -12,10 +12,30 @@ class Suitcase extends Component {
     };
   }
 
-  componentDidMount() {
-    this.setState({
-      suitcase: this.assembleSuitcase()
-    });
+  componentDidUpdate(prevProps) {
+    if (prevProps.tempData !== this.props.tempData) {
+      this.setState({ avgTemp: this.props.tempData }, () => {
+        let suitcase = this.getSuitcase();
+        this.setState({ suitcase: suitcase });
+      });
+    }
+  }
+
+  getSuitcase() {
+    var compactSuitcase;
+
+    const checkTemp = parseInt(this.state.avgTemp);
+
+    if (checkTemp > 23) {
+      compactSuitcase = this.state.suitcaseHot.map(item => {
+        return { item: item, quantity: this.state.holidayLength };
+      });
+    } else {
+      compactSuitcase = this.state.suitcaseCold.map(item => {
+        return { item: item, quantity: this.state.holidayLength };
+      });
+    }
+    return compactSuitcase;
   }
 
   getHolidayLength() {
@@ -25,22 +45,6 @@ class Suitcase extends Component {
     let numberOfDays = milliseconds / (1000 * 3600 * 24);
 
     return numberOfDays;
-  }
-
-  assembleSuitcase() {
-    var compactSuitcase;
-
-    if (this.state.avgTemp >= 23) {
-      compactSuitcase = this.state.suitcaseHot.map(item => {
-        return { item: item, quantity: this.state.holidayLength };
-      });
-    } else {
-      compactSuitcase = this.state.suitcaseCold.map(item => {
-        return { item: item, quantity: this.state.holidayLength };
-      });
-    }
-
-    return compactSuitcase;
   }
 
   render() {
