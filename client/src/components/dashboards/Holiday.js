@@ -36,7 +36,6 @@ class Holiday extends Component {
 
     var dateTime = new Date();
     var date = moment(dateTime).format("YYYY-MM-DD");
-    console.log(date);
 
     return (
       <form className="holiday-form__card" onSubmit={this.onFormSubmit}>

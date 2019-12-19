@@ -23,15 +23,17 @@ export default class WeatherForecast extends Component {
       .then(res => res.json())
       .then(data => {
         const dailyData = data.list.filter(reading =>
-          reading.dt_txt.includes("12:00:00")
+          reading.dt_txt.includes("06:00:00")
         );
         this.setState(
           {
             fullData: data.list,
             dailyData: dailyData
-          },
-          () => console.log(this.state)
+          }
         );
+        const listInfo = this.state.dailyData;
+        const averageTemp = listInfo.reduce((acc, curr) => acc + curr.main.temp, 0) / 5;
+        this.props.callbackFromParent(averageTemp);
       });
   }
 
