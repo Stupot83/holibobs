@@ -4,7 +4,7 @@ class Suitcase extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      avgTemp: 24,
+      avgTemp: this.props.tempData,
       holidayLength: this.getHolidayLength(),
       suitcaseHot: ["vest", "shorts", "flip-flops", "undies"],
       suitcaseCold: ["t-shirt", "jeans", "socks", "undies"],
@@ -12,10 +12,30 @@ class Suitcase extends Component {
     };
   }
 
-  componentDidMount() {
-    this.setState({
-      suitcase: this.assembleSuitcase()
-    });
+  componentDidUpdate(prevProps) {
+    if (prevProps.tempData !== this.props.tempData) {
+      this.setState({ avgTemp: this.props.tempData }, () => {
+        let suitcase = this.getSuitcase();
+        this.setState({ suitcase: suitcase });
+      });
+    }
+  }
+
+  getSuitcase() {
+    var compactSuitcase;
+
+    const checkTemp = parseInt(this.state.avgTemp);
+
+    if (checkTemp > 23) {
+      compactSuitcase = this.state.suitcaseHot.map(item => {
+        return { item: item, quantity: this.state.holidayLength };
+      });
+    } else {
+      compactSuitcase = this.state.suitcaseCold.map(item => {
+        return { item: item, quantity: this.state.holidayLength };
+      });
+    }
+    return compactSuitcase;
   }
 
   getHolidayLength() {
@@ -27,22 +47,6 @@ class Suitcase extends Component {
     return numberOfDays;
   }
 
-  assembleSuitcase() {
-    var compactSuitcase;
-
-    if (this.state.avgTemp >= 23) {
-      compactSuitcase = this.state.suitcaseHot.map(item => {
-        return { item: item, quantity: this.state.holidayLength };
-      });
-    } else {
-      compactSuitcase = this.state.suitcaseCold.map(item => {
-        return { item: item, quantity: this.state.holidayLength };
-      });
-    }
-
-    return compactSuitcase;
-  }
-
   render() {
     return (
       <div>
@@ -51,7 +55,7 @@ class Suitcase extends Component {
             ? "Your holiday is " + this.state.holidayLength + " days long."
             : "Finding holiday length."}
         </p>
-        <p className="suitcase">
+        <div className="suitcase">
           {this.state.suitcase.map(item => {
             return (
               <p>
@@ -59,7 +63,7 @@ class Suitcase extends Component {
               </p>
             );
           })}
-        </p>
+        </div>
       </div>
     );
   }

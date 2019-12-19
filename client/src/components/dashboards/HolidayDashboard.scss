@@ -60,16 +60,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.delete-button {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    border-radius: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    background-color: #022444;
-    color: white;
-}
+
 
 .suitcase {
     &-container {
@@ -132,5 +123,36 @@
             display: flex;
             justify-content: space-around;
         }
+    }
+}
+.back-button {
+    position: absolute;
+    top: 17px;
+    left: 17px;
+
+    &__image{
+        height: 50px;
+        width: 50px;
+    }
+}
+
+.delete-button {
+    background-color: #D2E7FF;
+    color: #022444;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 20px;
+    font-weight: bold;
+    
+    &__container {
+        height: 50px;
+        width: 180px;
+        margin: 50px auto;
+    } 
+
+    &__hover {
+        cursor: pointer;
+        background-color: transparent;
+        color: #022444;
     }
 }

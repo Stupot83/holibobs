@@ -20,7 +20,6 @@ export default class Holidays extends Component {
     }
 
     holidayCard() {
-        console.log(this.state.holidays);
         return this.state.holidays.map((data, i) => {
             return <HolidayCard obj={data} key={i} />;
         });
